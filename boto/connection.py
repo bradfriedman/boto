@@ -388,7 +388,7 @@ class HTTPRequest(object):
 class HTTPResponse(httplib.HTTPResponse):
 
     def __init__(self, *args, **kwargs):
-        httplib.HTTPResponse.__init__(self, *args, **kwargs)
+        httplib.HTTPResponse.__init__(self, buffering=True, *args, **kwargs)
         self._cached_response = ''
 
     def read(self, amt=None):
